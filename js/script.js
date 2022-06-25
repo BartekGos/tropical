@@ -10,11 +10,16 @@ const handleNav = () => {
 
 	navBtnBars.classList.remove('black-bars-color')
 
+	if (!nav.classList.contains('nav--active')) {
+		handleObserver()
+	}
+
 	allNavItems.forEach(item => {
 		item.addEventListener('click', () => {
 			nav.classList.remove('nav--active')
 		})
 	})
+
 	handleNavItemsAnimation()
 }
 
